@@ -1,0 +1,79 @@
+body {
+    overflow: hidden;
+}
+
+.full-page{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.landing-image{
+    border-radius: 50%;
+    max-width: 430px;
+}
+
+
+//Ova dva imaju dosta sličnih pravila, rješi to s scss-om
+.right{
+    height: 100vh;
+    width: 50%;
+    right: 0px;
+    position: absolute;
+    background-color: #5B81A7;
+    z-index: 10;
+}
+
+.left{
+    height: 100vh;
+    width: 50%;
+    position: absolute;
+    background-color: #333633;
+    z-index: 10;
+}
+//
+
+.center{
+    z-index: 20;
+}
+
+
+@-webkit-keyframes fadeInFromLeft { from { right: 100%; } to { right:50%; } }
+@-moz-keyframes fadeInFromLeft { from { right: 100%; } to { right:50%; } }
+@keyframes fadeInFromLeft { from { right: 100%; } to { right:50%; } }
+.fade-in-from-left {
+    /* make things invisible upon start */
+  -webkit-animation:fadeInFromLeft ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -webkit-animation-duration:1.2s;
+
+  -moz-animation:fadeInFromLeft ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-duration:1.2s;
+
+  animation:fadeInFromLeft ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  animation-duration:1.2s;
+}
+
+@-webkit-keyframes fadeInFromRight { from { left: 100%; } to { left:50%; } }
+@-moz-keyframes fadeInFromRight { from { left: 100%; } to { left:50%; } }
+@keyframes fadeInFromRight { from { left: 100%; } to { left:50%; } }
+.fade-in-from-right {
+    /* make things invisible upon start */
+  -webkit-animation:fadeInFromRight ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -webkit-animation-duration:1.2s;
+
+  -moz-animation:fadeInFromLeft ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-duration:1.2s;
+
+  animation:fadeInFromRight ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  animation-duration:1.2s;
+}
